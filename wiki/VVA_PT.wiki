@@ -17,22 +17,22 @@ O servidor permite ligações remotas à consola e mantem registos e logs dos co
 
  Os módulos são funções específicas que injectam codigo de modo a que a consola tenha mais funcionalidades que simples interacção com aiml nas diferentes plataformas.
 
-==Calculadora==
+===Calculadora===
 
-==Datas e tempo==
+===Datas e tempo===
 
-==Xadrez==
+===Xadrez===
 
  (desenvolvido): Usando o phpchess e o java chess é possivel jogar xadrez com a Vénus ou com outros jogadores humanos.
 
-==Automação de Processos em ambiente linux ou windows ==
+===Automação de Processos em ambiente linux ou windows ===
 
-==Aprendizagem simples manual== 
+===Aprendizagem simples manual===
 
 Pretende-se um formulário que permita inserir novas linhas de comando à Vénus. Está disponível usando
 
-==Aprendizagem automática via net==
+===Aprendizagem automática via net===
 
-==Controle remoto de aplicações ou placas electrónicas==
+===Controle remoto de aplicações ou placas electrónicas===
 
 Este módulo permitirá activar máquinas, servidores, placas electrónicas.
