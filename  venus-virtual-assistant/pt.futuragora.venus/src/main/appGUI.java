@@ -10,9 +10,6 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.SwingWorker;
-
 import org.alicebot.ab.*;
 
 @SuppressWarnings("serial")
@@ -34,6 +31,7 @@ public class appGUI extends JFrame{
 	public static void main(String[] args) {
 			
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					appGUI window = new appGUI();
@@ -57,18 +55,7 @@ public class appGUI extends JFrame{
 		bot = new Bot(botname, path);
 				
 		//creates a new chat session
-		chatSession = new Chat(bot);
-				
-		//initialises the variable for the user message
-		
-				
-		//initialises the variable for the bot response
-		
-				
-		//System.out.println(response); //just to check if initialisation went ok
-		
-		
-		
+		chatSession = new Chat(bot);	
 	}
 
 	/**
@@ -122,7 +109,6 @@ public class appGUI extends JFrame{
 	}
 	
 	
-
 	public static void setVenusOutput(String venusOutput) {
 			
 			lblVenusMessage.setText(chatSession.multisentenceRespond(venusOutput));
@@ -133,8 +119,5 @@ public class appGUI extends JFrame{
 		
 		return txtUserMessage.getText();
 	}
-
-	
-	
 
 }
