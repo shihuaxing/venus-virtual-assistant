@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,37 +10,66 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
+
+import org.alicebot.ab.*;
 
 @SuppressWarnings("serial")
 public class appGUI extends JFrame{
 	
 	//private objects for use in the GUI
-	private static JFrame frame;
-	private static JPanel panel;
+	private JFrame frame;
+	private JPanel panel;
 	private static JTextField txtUserMessage;
 	private static JLabel lblVenusMessage;
+	static Bot bot;
+	static Chat chatSession;
 	
 	//private variables for external access
-	private static String VenusOutput;
-	private static String UserMessage;
-	private static Boolean newMessage;
-	
 
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					app window = new app();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+			
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					appGUI window = new appGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		// gets the path of the root folder for this project
+		String path = System.getProperty("user.dir");
+		
+		//System.out.println(path); //Prints in console the path to root folder -- just for me to check
+		path +="/bin";
+		System.out.println(path);
+		
+		//Names the bot
+		String botname="Venus";
+		
+		//creates a AIML bot based on the files that it finds in path
+		bot = new Bot(botname, path);
+				
+		//creates a new chat session
+		chatSession = new Chat(bot);
+				
+		//initialises the variable for the user message
+		
+				
+		//initialises the variable for the bot response
+		
+				
+		//System.out.println(response); //just to check if initialisation went ok
+		
+		
+		
+	}
 
 	/**
 	 * Create the application.
@@ -47,11 +77,9 @@ public class appGUI extends JFrame{
 	 */
 	public appGUI() {
 		initialize();
-		appGUI.frame.setVisible(true);
+		frame.setVisible(true);
 		txtUserMessage.setText("Type here.");
 		lblVenusMessage.setText("Please talk with me.");
-		newMessage=true;
-		//panel.add(lblVenusMessage);
 	}
 
 	/**
@@ -72,6 +100,7 @@ public class appGUI extends JFrame{
 		lblVenusMessage.setVerticalAlignment(SwingConstants.TOP);
 		lblVenusMessage.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblVenusMessage, "cell 1 2");
+		System.out.println("LblVenusMessage thread is: "+Thread.currentThread().getName() );
 		
 		//sets TextField userMessage on the GUI window
 		txtUserMessage = new JTextField(); //Creates a new object and assigns to the variable txtUserMessage defined at top of file.
@@ -83,40 +112,29 @@ public class appGUI extends JFrame{
 		txtUserMessage.addActionListener(new ActionListener()
 		{
 			@Override
-			public void actionPerformed(ActionEvent e)
+			public  void actionPerformed(ActionEvent e)
 			{
-				UserMessage = txtUserMessage.getText();
-				txtUserMessage.setText("");
+						setVenusOutput(txtUserMessage.getText());
+						txtUserMessage.setText("");
+						
 			}
 		});
 	}
-	public static String getVenusOutput() {
-		VenusOutput = lblVenusMessage.getText();
-		return VenusOutput;
-	}
+	
+	
 
-	public void setVenusOutput(String venusOutput) {
-		VenusOutput = venusOutput;
-		lblVenusMessage.setText(VenusOutput);
-		lblVenusMessage.repaint();
-		//panel.add(lblVenusMessage);
-	}
-
+	public static void setVenusOutput(String venusOutput) {
+			
+			lblVenusMessage.setText(chatSession.multisentenceRespond(venusOutput));
+			
+		};
+		
 	public String getUserMessage() {
 		
-		return UserMessage;
+		return txtUserMessage.getText();
 	}
 
-	public static void setUserMessage(String userMessage) {
-		UserMessage = userMessage;
-	}
 	
-	public Boolean getNewMessage() {
-		return newMessage;
-	}
-
-	public void setNewMessage(Boolean newMessage) {
-		appGUI.newMessage = newMessage;
-	}
+	
 
 }
