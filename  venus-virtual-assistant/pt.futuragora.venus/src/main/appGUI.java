@@ -74,11 +74,12 @@ public class appGUI extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Venus AIML BOT by Futuragora.pt");  //Sets the title of the window
+		frame.setBounds(100, 100, 450, 300);				//Sets Window Size
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Closes the frame when you close app
 		frame.getContentPane().setLayout(null);
 		
-		panel = new JPanel();
+		panel = new JPanel();								
 		panel.setBounds(12, 12, 426, 263);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new MigLayout("", "[][342.00,grow,center][]", "[][][156.00,top][]"));
