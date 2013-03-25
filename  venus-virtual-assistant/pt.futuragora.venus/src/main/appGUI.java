@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -22,6 +24,7 @@ public class appGUI extends JFrame{
 	private static JLabel lblVenusMessage;
 	static Bot bot;
 	static Chat chatSession;
+	private Button button;
 	
 	//private variables for external access
 
@@ -65,20 +68,26 @@ public class appGUI extends JFrame{
 	public appGUI() {
 		initialize();
 		frame.setVisible(true);
-		txtUserMessage.setText("Type here.");
-		lblVenusMessage.setText("Please talk with me.");
+		txtUserMessage.setText("Type input text here.");
+		lblVenusMessage.setText("Venus Personal Assistant V.0.0.6");
 	}
 
 	/**
 	 * Initialise the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
+		
+		frame = new JFrame(); // Java Frame in SWING
 		frame.setTitle("Venus AIML BOT by Futuragora.pt");  //Sets the title of the window
 		frame.setBounds(100, 100, 450, 300);				//Sets Window Size
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Closes the frame when you close app
 		frame.getContentPane().setLayout(null);
-		
+		// Buttons
+		button = new Button("Apps");
+		frame.add(button); 
+		frame.setLayout(new FlowLayout());
+
+			  
 		panel = new JPanel();								
 		panel.setBounds(12, 12, 426, 263);
 		frame.getContentPane().add(panel);
@@ -88,7 +97,8 @@ public class appGUI extends JFrame{
 		lblVenusMessage.setVerticalAlignment(SwingConstants.TOP);
 		lblVenusMessage.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblVenusMessage, "cell 1 2");
-		System.out.println("LblVenusMessage thread is: "+Thread.currentThread().getName() );
+		//System.out.println("LblVenusMessage thread is: "+Thread.currentThread().getName() );-- checks the thread
+		
 		
 		//sets TextField userMessage on the GUI window
 		txtUserMessage = new JTextField(); //Creates a new object and assigns to the variable txtUserMessage defined at top of file.
@@ -122,3 +132,5 @@ public class appGUI extends JFrame{
 	}
 
 }
+
+

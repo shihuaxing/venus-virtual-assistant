@@ -1,8 +1,8 @@
-url:http://www.alicebot.org
-name:SUPER
-email:callmom-info@pandorabots.com
-gender:male
-botmaster:Dr. Richard S. Wallace
-organization:ALICE AI Foundation
+url:http://www.futuragora.pt
+name:Venus
+email:venus@futuragora.pt
+gender:female
+botmaster:Futuragora
+organization:FUTURAGORA - NPO for RBE
 version:0.0.4
 
