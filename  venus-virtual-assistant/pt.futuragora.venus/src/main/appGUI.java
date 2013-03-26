@@ -86,7 +86,6 @@ public class appGUI extends JFrame{
 		button = new Button("Apps");
 		frame.add(button); 
 		frame.setLayout(new FlowLayout());
-
 			  
 		panel = new JPanel();								
 		panel.setBounds(12, 12, 426, 263);
