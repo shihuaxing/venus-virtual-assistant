@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -24,7 +23,7 @@ public class appGUI extends JFrame{
 	private static JLabel lblVenusMessage;
 	static Bot bot;
 	static Chat chatSession;
-	private Button button;
+//	private Button button;
 	
 	//private variables for external access
 
@@ -48,7 +47,7 @@ public class appGUI extends JFrame{
 		String path = System.getProperty("user.dir");
 		
 		//System.out.println(path); //Prints in console the path to root folder -- just for me to check
-		path +="/bin";
+		path +="/src";
 		System.out.println(path);
 		
 		//Names the bot
@@ -82,10 +81,11 @@ public class appGUI extends JFrame{
 		frame.setBounds(100, 100, 450, 300);				//Sets Window Size
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Closes the frame when you close app
 		frame.getContentPane().setLayout(null);
+		
 		// Buttons
-		button = new Button("Apps");
+/*		button = new Button("Apps");
 		frame.add(button); 
-		frame.setLayout(new FlowLayout());
+		frame.setLayout(new FlowLayout());*/
 			  
 		panel = new JPanel();								
 		panel.setBounds(12, 12, 426, 263);
