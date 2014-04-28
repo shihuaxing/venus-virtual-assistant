@@ -11,24 +11,40 @@ If you come to this point, we think you are looking for the future. You are in t
 
 ==Voice Recognition==
 
-* Voice recognition 
+- Voice recognition 
 
 ==Engine Features==
 
-* Conversation (AIML chat)
-* Calendar, apoitements and agenda
-* Execute Programs
-* Check emails
-* Media Player
-* Convert multimedia
-* Play Radios
-* Rss Feed and news
-* Weather reports
-* Web Tv
-* Diccionary
-* Image browsing
-* Movies and theathers
-* Maps
-* Translation
-* Search Google, Wikipedia and others
-* Upload do Webpicasa, youtube
+- Conversation (AIML chat)
+
+- Calendar, apoitements and agenda
+
+- Execute Programs
+
+- Check emails
+
+- Media Player
+
+- Convert multimedia
+
+- Play Radios
+
+- Rss Feed and news
+
+- Weather reports
+
+- Web Tv
+
+- Diccionary
+
+- Image browsing
+
+- Movies and theathers
+
+- Maps
+
+- Translation
+
+- Search Google, Wikipedia and others
+
+- Upload do Webpicasa, youtube
